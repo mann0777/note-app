@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Button from '@material-ui/core/Button';
 
-const CreateNote=()=>{
+const CreateNote=(props)=>{
     const [note, setNote]= useState({
         title: "",
         content: "",
@@ -20,7 +20,16 @@ const CreateNote=()=>{
     console.log(note);
     };
 
-    
+    const addEvent=()=>{
+        props.passNote(note);
+        setNote({
+            title: "",
+            content: "",
+        });
+
+    };
+
+
 
 
     return(

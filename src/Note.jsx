@@ -1,14 +1,21 @@
 import React from "react";
 
 
-const Note=()=>{
+const Note=(props)=>{
+
+    const deleteNote=()=>{
+        props.deleteItem(props.id);
+
+    };
+
+
     return(
     <>
     <div className="note">
-    <h1>Title</h1>
+    <h1>{props.title}</h1>
     <br />
-    <p>This is the content</p>
-    <button className="btn">
+    <p>{props.content}</p>
+    <button className="btn" onClick={deleteNote}>
     <spam className="deleteIcon"> 🔻 </spam>
     </button>
     
