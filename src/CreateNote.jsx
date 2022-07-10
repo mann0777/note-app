@@ -2,6 +2,10 @@ import React,{useState} from "react";
 import Button from '@material-ui/core/Button';
 
 const CreateNote=(props)=>{
+
+    const[expand, setExpand] = useState(false);
+
+
     const [note, setNote]= useState({
         title: "",
         content: "",
@@ -29,6 +33,11 @@ const CreateNote=(props)=>{
 
     };
 
+    const expandIt=()=>{
+        setExpand(true);
+
+    };
+
 
 
 
@@ -36,13 +45,14 @@ const CreateNote=(props)=>{
     <>
     <div className="main_note">
     <form>
+    {expand?
         <input 
         type="text" 
         name="title" 
         value={note.title} 
         onChange={InputEvent} 
         placeholder="Title" 
-        autoComplete="off" />
+        autoComplete="off" /> :null}
 
 
         <textarea 
@@ -51,10 +61,14 @@ const CreateNote=(props)=>{
         column="" 
         value={note.content} 
         onChange={InputEvent} 
-        placeholder="Write a Note" />
+        placeholder="Write a Note" 
+        onClick={expandIt}
+        />
+
+        {expand?
         <Button onClick={addEvent}>
-        <spamm className="plus_sign">ADD</spamm>
-        </Button>
+        <spamm className="plus_sign">+</spamm>
+        </Button> :null}
     </form>
     </div>
         

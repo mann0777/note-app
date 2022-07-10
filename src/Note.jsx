@@ -16,7 +16,7 @@ const Note=(props)=>{
     <br />
     <p>{props.content}</p>
     <button className="btn" onClick={deleteNote}>
-    <spam className="deleteIcon"> 🔻 </spam>
+    -
     </button>
     
 

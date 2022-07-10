@@ -30,7 +30,7 @@ const App=()=>{
   return<>
   <Header />
     <CreateNote passNote={addNote}/>
-    <Note/>
+    
 
     {addItem.map((val, index)=>{
       return(<Note
